@@ -4,19 +4,19 @@ import turtle as trtl
 import random
 
 #-----game configuration----
-timer = 5
+timer = 20
 counter_interval = 1000   #1000 represents 1 second
 timer_up = False
 shape = "turtle"
 color = "blue"
-size = 2  
+size = 20 
 #beige
 score = 0
 #-----initialize turtle-----
 counter =  trtl.Turtle()
 counter.hideturtle()
 counter.penup()
-counter.goto(400,400)
+counter.goto(300,300)
 counter.pendown()
 ham = trtl.Turtle(shape = shape)
 ham.color(color)
@@ -26,7 +26,7 @@ sco = trtl.Turtle(shape = shape)
 sco.shape("square")
 sco.ht()
 sco.penup()
-sco.goto(-400,400)
+sco.goto(-420,350)
 font = ("Arial",30)
 sco.write(score, font=font)
 
@@ -51,6 +51,8 @@ def turtle_clicked(x,y):
     change_position()
     score_counter()
     ham.color(random_color())
+    wn.bgcolor(random_color())#this is my modification
+    ham.shapesize(20 / score) #this is my modification 
 
 def change_position():
     ham.penup()
@@ -67,7 +69,7 @@ def score_counter():
     sco.clear()
     sco.write(score, font=font)
     
-def random_color():
+def random_color(): #this is my customization
     r = random.random()
     g = random.random()
     b = random.random()
